@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<style>
+
+    body {
+        background-color: #363c45;
+        height: 100vh;
+        padding: 0px;
+        margin: 0px;
+
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+
+    }
+
+    input {
+        width: 350px;
+        height: 25px;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        background-color: #afbab9;
+        border: 2px solid #afbab9;
+        box-shadow: 2px 2px 8px black;
+    }
+
+    input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #16cc44;
+    }
+
+    button {
+
+        border-radius: 5px;
+        background-color: #21fc58;
+        border: 5px solid #21fc58;
+        box-shadow: 2px 2px 5px black;
+        width: 150px;
+
+    }
+
+    button:hover {
+        outline: none;
+        background-color: #3ce867;
+        border-color: #3de867;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #16cc44;
+    }
+
+    #registerDiv {
+        text-align: center;
+        float: right;
+        margin-right: 300px;
+    }
+
+    #registerForm {
+        border: 3px solid #21fc58;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    #loginDiv {
+        text-align: center;
+        float: left;
+        margin-left: 300px;
+    }
+
+    #loginForm {
+        border: 3px solid #21fc58;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 50px;
+        color: #21fc58;
+    }
+
+</style>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="library.js"></script>
+</head>
+<body onload="checkCookie()">
+<div id="container">
+    <div id="loginDiv">
+        <p>Login</p>
+        <div id="loginForm">
+            <input placeholder="Username..." id="usernameLoginInput"><br>
+            <input type="password" placeholder="Password..." id="passwordLoginInput"><br>
+            <button onclick="login()">Login</button>
+            <br>
+        </div>
+    </div>
+    <div id="registerDiv">
+        <p>Register</p>
+        <div id="registerForm">
+            <input placeholder="Username..." id="usernameRegisterInput"><br>
+            <input type="password" placeholder="Password..." id="passwordRegisterInput"><br>
+            <input type="email" placeholder="EMail..." id="emailRegisterInput"><br>
+            <button onclick="register()">Register</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

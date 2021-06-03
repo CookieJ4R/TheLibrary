@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<style>
+
+    body {
+        background-color: #363c45;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    ul {
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px 0px;
+        overflow: hidden;
+        background-color: #2b313b;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        width: 150px;
+        height: 7vh;
+        line-height: 7vh;
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+    .active {
+        background-color: #21fc58;
+        color: #363c45;
+    }
+
+    #riddleText {
+        font-size: 30px;
+        color: white;
+    }
+
+    #answerResult {
+        font-size: 15px;
+        color: white;
+    }
+
+    #riddleWrapper {
+        display: table;
+        border: 3px solid #21fc58;
+        border-radius: 8px;
+        padding: 10px 10px;
+        text-align: center;
+        max-width: 50%;
+        margin: auto;
+    }
+
+    li a:hover {
+        background-color: #21fc58;
+        color: #363c45;
+    }
+
+    input {
+        width: 350px;
+        height: 25px;
+        border-radius: 5px;
+        margin-bottom: 25px;
+        background-color: #afbab9;
+        border: 2px solid #afbab9;
+        box-shadow: 2px 2px 8px black;
+    }
+
+    input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #16cc44;
+    }
+
+    button {
+
+        border-radius: 5px;
+        background-color: #21fc58;
+        border: 5px solid #21fc58;
+        box-shadow: 2px 2px 5px black;
+        width: 150px;
+
+    }
+
+    button:hover {
+        outline: none;
+        background-color: #3ce867;
+        border-color: #3de867;
+    }
+
+    button:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #16cc44;
+    }
+
+    #flexboxContainer {
+        height: 93vh;
+        display: flex;
+    }
+
+    #dropdownContent {
+        display: none;
+        position: absolute;
+        width: inherit;
+    }
+
+    #dropdown:hover #dropdownContent {
+        display: block;
+    }
+
+
+</style>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Library</title>
+    <script src="library.js"></script>
+</head>
+
+<body onload="loadRiddleText()">
+
+<ul>
+    <li><a class="active">Riddle</a></li>
+    <li><a href="leaderboard.html">Leaderboard</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li style="float:right;" id="dropdown"><a id="username">Username</a>
+        <ul id="dropdownContent">
+            <li><a onclick="logout()">Logout</a></li>
+        </ul>
+    </li>
+</ul>
+
+<div id="flexboxContainer">
+    <div id="riddleWrapper">
+        <div class="riddle">
+            <p id="riddleText">Der Spaß bleibt aus.</p>
+        </div>
+        <p id="answerResult"></p>
+        <input placeholder="Answer..." id="answerInput"><br>
+        <button onclick="submitAnswer()">Submit</button>
+    </div>
+</div>
+</body>
+
+</html>

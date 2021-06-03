@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<style>
+
+    body {
+        background-color: #363c45;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p {
+        color: white;
+        font-size: 30px;
+    }
+
+    ul {
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0px 0px;
+        overflow: hidden;
+        background-color: #2b313b;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        width: 150px;
+        height: 7vh;
+        line-height: 7vh;
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #21fc58;
+        color: #363c45;
+    }
+
+    .active {
+        background-color: #21fc58;
+        color: #363c45;
+    }
+
+    #flexboxContainer {
+        height: 93vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #leaderboardWrapper {
+        border: 2px solid #21fc58;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    #yourPoints {
+        text-align: center;
+    }
+
+    #leaderboard {
+        display: flex;
+    }
+
+    #leaderboardNames {
+
+        text-align: left;
+
+        margin: 100px;
+    }
+
+    #leaderboardData {
+        text-align: right;
+        margin: 100px;
+    }
+
+    #dropdownContent {
+        display: none;
+        position: absolute;
+        width: inherit;
+    }
+
+    #dropdown:hover #dropdownContent {
+        display: block;
+    }
+
+</style>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+    <script src="library.js"></script>
+</head>
+<body onload="showLeaderboard()">
+<ul>
+    <li><a href="index.html">Riddle</a></li>
+    <li><a class="active">Leaderboard</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li style="float:right;" id="dropdown"><a id="username">Username</a>
+        <ul id="dropdownContent">
+            <li><a onclick="logout()">Logout</a></li>
+        </ul>
+    </li>
+</ul>
+
+<div id="flexboxContainer">
+    <p id="yourPoints"></p><br>
+    <div id="leaderboardWrapper">
+        <p>Leaderboard</p>
+        <div id="leaderboard">
+            <p id="leaderboardNames"></p>
+            <p id="leaderboardData"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
